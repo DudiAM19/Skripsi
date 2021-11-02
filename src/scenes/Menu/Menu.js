@@ -2,7 +2,11 @@ import React from 'react';
 import {View, Text, ImageBackground, SafeAreaView} from 'react-native';
 import styles from './styles.js';
 
+import useHome from './useHome';
+
 const Menu = () => {
+  const {humadity, temperature} = useHome();
+
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground
@@ -21,13 +25,13 @@ const Menu = () => {
           <View style={styles.humaditySection}>
             <Text style={styles.textHumadity}>Humadity</Text>
             <View style={styles.tempHumadity}>
-              <Text style={styles.textTempHumadity}>75°</Text>
+              <Text style={styles.textTempHumadity}>{humadity + '°'}</Text>
             </View>
           </View>
           <View style={styles.temperatureSection}>
             <View style={styles.border}>
               <View style={styles.temp}>
-                <Text style={styles.textTemp}>28°</Text>
+                <Text style={styles.textTemp}>{temperature + '°'}</Text>
               </View>
             </View>
           </View>
