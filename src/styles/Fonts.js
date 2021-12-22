@@ -1,5 +1,6 @@
-export const ARIAL = 'Arial';
-export const ARIAL_BLACK = 'Arial Black';
-export const ARIAL_BOLD = 'Arial Bold';
-export const ARIAL_ITALIC = 'Arial Italic';
-export const ARIAL_ROUNDED_BOLD = 'Arial Rounded MT Bold';
+export const PMedium = 'ProductSans-Medium';
+export const PRegular = 'ProductSans-Regular';
+export const PLight = 'ProductSans-Light';
+export const MMedium = 'Montserrat-Medium';
+export const MRegular = 'Montserrat-Regular';
+export const MBold = 'Montserrat-Bold';

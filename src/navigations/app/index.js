@@ -7,7 +7,7 @@ import {Home, Menu} from 'scenes';
 const Stack = createNativeStackNavigator();
 const AppStack = () => (
   <Stack.Navigator>
-    <Stack.Group>
+    <Stack.Group screenOptions={{headerShown: false}}>
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Menu" component={Menu} />
     </Stack.Group>

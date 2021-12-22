@@ -1,42 +1,62 @@
 import React from 'react';
-import {View, Text, ImageBackground, SafeAreaView} from 'react-native';
+import {View, Text, Image, SafeAreaView} from 'react-native';
 import styles from './styles.js';
-
+// import function useHome
 import useHome from './useHome';
 
 const Menu = () => {
-  const {humadity, temperature} = useHome();
+  const {humadity, temperature, notification} = useHome();
 
   return (
     <SafeAreaView style={styles.container}>
-      <ImageBackground
-        source={require('../../asset/Android.png')}
-        style={styles.image}
-        resizeMode="contain">
-        <Text style={styles.Text}>MyGarden</Text>
-        <View style={{alignItems: 'center'}}>
-          <View style={styles.notifSection}>
-            <Text style={styles.notifText}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </Text>
-          </View>
+      <View style={styles.Header}>
+        <View style={styles.TextLeft}>
+          <Text style={styles.Good}>Good</Text>
+          <Text style={styles.Morning}>Morning</Text>
         </View>
-        <View style={{flexDirection: 'row', marginBottom: 200}}>
-          <View style={styles.humaditySection}>
-            <Text style={styles.textHumadity}>Humadity</Text>
-            <View style={styles.tempHumadity}>
-              <Text style={styles.textTempHumadity}>{humadity + '°'}</Text>
-            </View>
-          </View>
-          <View style={styles.temperatureSection}>
-            <View style={styles.border}>
-              <View style={styles.temp}>
-                <Text style={styles.textTemp}>{temperature + '°'}</Text>
+        <View style={styles.TextRight}>
+          <Text style={styles.Time}>10.05</Text>
+          <Text style={styles.Time1}>a.m</Text>
+        </View>
+      </View>
+      <View style={styles.Content}>
+        <View style={styles.ImgSection}>
+          <Image source={require('../../asset/tree.png')} style={styles.Img} />
+        </View>
+        <View style={styles.Info}>
+          <View style={styles.HumadityCard}>
+            <View style={styles.circle1}>
+              <View style={styles.circle2}>
+                <View style={styles.circle3}>
+                  <Image
+                    source={require('../../asset/water.png')}
+                    style={styles.ImgWater}
+                  />
+                </View>
               </View>
             </View>
+            <Text style={styles.HumadityValue}>{humadity + '%'}</Text>
+            <Text style={styles.HumadityText}>Humadity</Text>
+          </View>
+          <View style={styles.TempCard}>
+            <View style={styles.circle1}>
+              <View style={styles.circle2}>
+                <View style={styles.circle3}>
+                  <Image
+                    source={require('../../asset/temp.png')}
+                    style={styles.ImgWater}
+                  />
+                </View>
+              </View>
+            </View>
+            <Text style={styles.TempValue}>{temperature + '°'}</Text>
+            <Text style={styles.TempText}>Temperature</Text>
           </View>
         </View>
-      </ImageBackground>
+      </View>
+      <View style={styles.Footer}>
+        <Text style={styles.Desc}>{notification}</Text>
+      </View>
     </SafeAreaView>
   );
 };
